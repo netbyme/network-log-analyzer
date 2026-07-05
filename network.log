@@ -1,0 +1,10 @@
+Jun 29 21:00:01 Router01 INFO: Interface GigabitEthernet0/0 is up
+Jun 29 21:00:05 Switch01 WARNING: High CPU utilization 85% on Switch01
+Jun 29 21:00:10 Router01 INFO: BGP neighbor 10.0.0.1 is established
+Jun 29 21:00:15 Router02 ERROR: Interface GigabitEthernet0/1 is down
+Jun 29 21:00:20 Firewall01 INFO: Connection established from 192.168.1.10
+Jun 29 21:00:25 Switch02 ERROR: Spanning tree topology change detected
+Jun 29 21:00:30 Router01 WARNING: Memory utilization 90% on Router01
+Jun 29 21:00:35 Router02 ERROR: OSPF neighbor 10.0.0.2 is down
+Jun 29 21:00:40 Switch01 INFO: MAC address table is full
+Jun 29 21:00:45 Firewall01 WARNING: High traffic detected on outside interface

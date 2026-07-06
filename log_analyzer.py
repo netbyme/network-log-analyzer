@@ -50,3 +50,61 @@ def analyze_log(filename="network.log"):
 # run
 create_sample_log()
 analyze_log()
+# Part 2 - Save analysis report to a dated file
+
+def save_report(errors, warnings, filename=None):
+    if not filename:
+        date = datetime.now().strftime("%Y-%m-%d_%H-%M")
+        filename = f"report_{date}.txt"
+    
+    with open(filename, "w") as f:
+        f.write("=== Network Log Analysis Report ===\n")
+        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+        
+        f.write("--- ERRORS ---\n")
+        for e in errors:
+            f.write(f"  {e}\n")
+        
+        f.write("\n--- WARNINGS ---\n")
+        for w in warnings:
+            f.write(f"  {w}\n")
+        
+        f.write(f"\nTotal errors  : {len(errors)}\n")
+        f.write(f"Total warnings: {len(warnings)}\n")
+        f.write(f"Total issues  : {len(errors) + len(warnings)}\n")
+    
+    print(f"\nReport saved to {filename}")
+
+# update analyze_log to return errors and warnings
+def analyze_log(filename="network.log"):
+    errors = []
+    warnings = []
+
+    with open(filename, "r") as f:
+        for line in f:
+            line = line.strip()
+            if "ERROR" in line:
+                errors.append(line)
+            elif "WARNING" in line:
+                warnings.append(line)
+
+    print("\n=== Network Log Analysis ===\n")
+
+    print("--- ERRORS ---")
+    for e in errors:
+        print(f"  {e}")
+
+    print("\n--- WARNINGS ---")
+    for w in warnings:
+        print(f"  {w}")
+
+    print(f"\nTotal errors  : {len(errors)}")
+    print(f"Total warnings: {len(warnings)}")
+    print(f"Total issues  : {len(errors) + len(warnings)}")
+    
+    # save report
+    save_report(errors, warnings)
+
+# run
+create_sample_log()
+analyze_log()

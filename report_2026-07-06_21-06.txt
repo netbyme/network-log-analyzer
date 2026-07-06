@@ -1,0 +1,16 @@
+=== Network Log Analysis Report ===
+Generated: 2026-07-06 21:06:49
+
+--- ERRORS ---
+  Jun 29 21:00:15 Router02 ERROR: Interface GigabitEthernet0/1 is down
+  Jun 29 21:00:25 Switch02 ERROR: Spanning tree topology change detected
+  Jun 29 21:00:35 Router02 ERROR: OSPF neighbor 10.0.0.2 is down
+
+--- WARNINGS ---
+  Jun 29 21:00:05 Switch01 WARNING: High CPU utilization 85% on Switch01
+  Jun 29 21:00:30 Router01 WARNING: Memory utilization 90% on Router01
+  Jun 29 21:00:45 Firewall01 WARNING: High traffic detected on outside interface
+
+Total errors  : 3
+Total warnings: 3
+Total issues  : 6
